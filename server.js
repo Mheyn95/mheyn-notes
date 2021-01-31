@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const apiRoutes = require("./Develop/routes/apiRoutes");
-const htmlRoutes = require("./Develop/routes/htmlRoutes");
+const apiRoutes = require("./routes/apiRoutes");
+const htmlRoutes = require("./routes/htmlRoutes");
 
 const express = require("express");
 const PORT = process.env.PORT || 3001;
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
 
-app.use(express.static(__dirname + "/develop/public"));
+app.use(express.static(__dirname + "/public"));
 
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}`);
